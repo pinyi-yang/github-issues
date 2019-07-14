@@ -71,3 +71,22 @@
   font-size: 14px;
   width: 50%;
 }
+
+.pagebar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1em 0;
+}
+
+.pagebar button {
+  width: 2em;
+  height: 2em;
+  border-radius: 3px;
+  font-size: 1em;
+}
+
+.currentpage {
+  color: white;
+  background: grey;
+}

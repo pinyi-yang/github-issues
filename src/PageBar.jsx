@@ -5,7 +5,7 @@ const PageBar = (props) => {
   for (let i = 1; i <=5; i++ ) {
     buttons.push(
       i === props.pageNum ? 
-        <button className='currentPage' value={i} onClick={props.goToPage}>{i}</button>
+        <button className='currentpage' value={i} onClick={props.goToPage}>{i}</button>
       : <button value={i} onClick={props.goToPage}>{i}</button>
     )
   }
