@@ -12,9 +12,9 @@ const PageBar = (props) => {
   
   return (
   <div className='pagebar'>
-    <button value={props.pageNum==1? 1:props.pageNum-1} onClick={props.goToPage}>＜</button>
+    <button value={props.pageNum===1? 1:props.pageNum-1} onClick={props.goToPage}>＜</button>
     {buttons}
-    <button value={props.pageNum==5? 5:props.pageNum+1} onClick={props.goToPage}>＞</button>
+    <button value={props.pageNum===5? 5:props.pageNum+1} onClick={props.goToPage}>＞</button>
   </div>
 
   );
