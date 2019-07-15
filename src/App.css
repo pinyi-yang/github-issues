@@ -54,16 +54,18 @@
 .showissuediv {
   display: flex;
   flex-direction: row;
-  border: black solid 1px;
+  border-top: black solid 1px;
   background: lightgoldenrodyellow;
+  padding-top: 1em;
 }
 
 .showissuecontent {
+  width: 80%;
+}
+.showissuesingle {
   display: flex;
   flex-direction: row;
-  border: black solid 1px;
-  background: lightgrey;
-  width: 80%;
+  margin-bottom: 1em;
 }
 
 .showissueavatar img {
@@ -71,7 +73,7 @@
 }
 
 .showissuebody {
-  border: lightgrey solid 1px;
+  border: black solid 1px;
   border-radius: 3px;
   padding: 5px;
 }
