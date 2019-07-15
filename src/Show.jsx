@@ -3,6 +3,7 @@ import moment from 'moment';
 import ReactMarkdown from 'react-markdown';
 import axios from 'axios';
 import Comments from './Comments';
+import NewComment from './NewComment'
 
 
 class Show extends React.Component {
@@ -50,6 +51,7 @@ class Show extends React.Component {
 
           <hr />
 
+          <NewComment issueNumber={this.props.match.params.number} />
         </div>
   
         <div className='showissuesidebar'>

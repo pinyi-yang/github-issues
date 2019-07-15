@@ -100,3 +100,8 @@
   color: white;
   background: grey;
 }
+
+.shownewcommentform textarea{
+  width: 51vw;
+  height: 100px;
+}
