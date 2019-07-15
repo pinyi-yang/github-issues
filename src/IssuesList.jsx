@@ -9,7 +9,10 @@ const IssuesList = (props) => {
       <div className='issueslistitem'>
         <div className='item'>
           <div className='itemhead'>
-            <b>! <Link to={'/issues/' + issue.id} className='bodylink'>{issue.title}</Link> </b> 
+            <b>
+              {issue.closed_at ? '✓' : '!'} 
+              <Link to={'/issues/' + issue.id} className='bodylink'>{issue.title}</Link> 
+            </b> 
             {props.sortBy === 'comments'? 
               issue.labels.map(label => (
                 <span className='label' style={{ backgroundColor: `#${label.color}` }}>{label.name}</span>

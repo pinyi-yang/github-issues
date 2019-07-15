@@ -72,9 +72,9 @@ class Issues extends React.Component {
         </div>
 
         <div className='issuesListContainer'>
-          <button onClick={this.selectOpen} className={this.state.isOpen? 'selectbtn':''}>! Open</button> 
-          <button onClick={this.selectClosed} className={this.state.isOpen? '':'selectbtn'}>✓ Closed</button>
-          <button onClick={this.setSort} value='id'>Sort by Date {this.state.sortBy==='id' ? ((this.state.reverse)? '▽':'△') : ''}</button>
+          <button onClick={this.selectOpen} className={this.state.isOpen? 'selectbtn':''}>! Open</button> {' '}
+          <button onClick={this.selectClosed} className={this.state.isOpen? '':'selectbtn'}>✓ Closed</button> {' '}
+          <button onClick={this.setSort} value='id'>Sort by Date {this.state.sortBy==='id' ? ((this.state.reverse)? '▽':'△') : ''}</button> {' '}
           <button onClick={this.setSort} value='comments'>Sort by Comments {this.state.sortBy==='comments' ? ((this.state.reverse)? '▽':'△') : ''}</button>
           {issuesListCom}
         </div>
