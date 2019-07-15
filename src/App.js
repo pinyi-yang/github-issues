@@ -44,7 +44,7 @@ class App extends React.Component {
         <div className='container'>
           <Route exact path='/' component={Home} />
           <Route exact path='/issues' render={() => <Issues openIssues={this.state.openIssues} closeIssues={this.state.closeIssues}/> } />
-          <Route path='/issues/:id' render={(props) => <Show {...props} issues={this.state.openIssues.concat(this.state.closeIssues)} /> } />
+          <Route path='/issues/:number' render={(props) => <Show {...props} issues={this.state.openIssues.concat(this.state.closeIssues)} /> } />
         </div>
       </Router>
     );

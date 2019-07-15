@@ -11,7 +11,7 @@ const IssuesList = (props) => {
           <div className='itemhead'>
             <b>
               {issue.closed_at ? '✓' : '!'} 
-              <Link to={'/issues/' + issue.id} className='bodylink'>{issue.title}</Link> 
+              <Link to={'/issues/' + issue.number} className='bodylink'>{issue.title}</Link> 
             </b> 
             {props.sortBy === 'comments'? 
               issue.labels.map(label => (
@@ -20,8 +20,8 @@ const IssuesList = (props) => {
             : ''}
           </div><br />
           {issue.closed_at ? 
-              <small>#{issue.id} by {issue.user.login} was closed {moment(issue.closed_at).fromNow()}  </small> 
-            : <small>#{issue.id} opened {moment(issue.created_at).fromNow()} by {issue.user.login} </small>}
+              <small>#{issue.number} by {issue.user.login} was closed {moment(issue.closed_at).fromNow()}  </small> 
+            : <small>#{issue.number} opened {moment(issue.created_at).fromNow()} by {issue.user.login} </small>}
         </div>
   
         <div className='commentcount'>
