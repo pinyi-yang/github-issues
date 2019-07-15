@@ -8,7 +8,14 @@ const IssuesList = (props) => {
     props.issues.map(issue => (
       <div className='issueslistitem'>
         <div className='item'>
-          <b>! <Link to={'/issues/' + issue.id} className='bodylink'>{issue.title}</Link> </b> <br/>
+          <div className='itemhead'>
+            <b>! <Link to={'/issues/' + issue.id} className='bodylink'>{issue.title}</Link> </b> 
+            {props.sortBy === 'comments'? 
+              issue.labels.map(label => (
+                <span className='label' style={{ backgroundColor: `#${label.color}` }}>{label.name}</span>
+              ))
+            : ''}
+          </div><br />
           {issue.closed_at ? 
               <small>#{issue.id} by {issue.user.login} was closed {moment(issue.closed_at).fromNow()}  </small> 
             : <small>#{issue.id} opened {moment(issue.created_at).fromNow()} by {issue.user.login} </small>}

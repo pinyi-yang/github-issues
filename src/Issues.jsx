@@ -10,7 +10,7 @@ class Issues extends React.Component {
       isOpen: true,
       page: 1,
       sortBy: 'id',
-      reverse: true
+      reverse: true,
     }
   }
 
@@ -47,6 +47,8 @@ class Issues extends React.Component {
   }
 
   render() {
+
+    //*sorting list
     let issuesList;
     let issuesListCom;
     let startissue = (this.state.page - 1 ) * 20;
@@ -54,28 +56,11 @@ class Issues extends React.Component {
     console.log(this.state['page']);
 
     this.state.isOpen ? issuesList = this.props.openIssues: issuesList = this.props.closeIssues;
-    issuesList = mergeSort(this.props.openIssues, this.state.sortBy);
+    issuesList = mergeSort(issuesList, this.state.sortBy);
     if (this.state.reverse) {
       issuesList.reverse();
     }
-
-    if (this.state.isOpen) {
-      issuesListCom = (
-        <>
-          <p>This is open issues list</p>
-          <IssuesList issues={issuesList.slice(startissue, endissue)} />
-        </>
-      )
-    } else {
-      issuesListCom = (
-        <>
-          <p>This is closed issues list</p>
-          <IssuesList issues={issuesList.slice(startissue, endissue)} />
-        </>
-      )
-    }
-
-    
+    issuesListCom = <IssuesList issues={issuesList.slice(startissue, endissue)} sortBy={this.state.sortBy}/>;
 
     return (
       <>
@@ -87,8 +72,8 @@ class Issues extends React.Component {
         </div>
 
         <div className='issuesListContainer'>
-          <button onClick={this.selectOpen}>! Open</button> 
-          <button onClick={this.selectClosed}>✓ Closed</button>
+          <button onClick={this.selectOpen} className={this.state.isOpen? 'selectbtn':''}>! Open</button> 
+          <button onClick={this.selectClosed} className={this.state.isOpen? '':'selectbtn'}>✓ Closed</button>
           <button onClick={this.setSort} value='id'>Sort by Date {this.state.sortBy==='id' ? ((this.state.reverse)? '▽':'△') : ''}</button>
           <button onClick={this.setSort} value='comments'>Sort by Comments {this.state.sortBy==='comments' ? ((this.state.reverse)? '▽':'△') : ''}</button>
           {issuesListCom}
